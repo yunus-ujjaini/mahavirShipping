@@ -1,0 +1,40 @@
+.container {
+  width: 50%;
+  margin: 20vh auto;
+  padding: 2vw;
+}
+
+h1 {
+  text-align: center;
+  color: #739072;
+  font-weight: 900;
+}
+
+.login-main {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  background-color: #739072;
+  padding: 2vw;
+  width: 70%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+input, button {
+  width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #739072;
+  font-weight: 900;
+  outline-color: #739072;
+}
+
+button {
+  background-color: #ECE3CE;
+  color: #739072;
+  font-weight: 900;
+  outline-color: #739072;
+}/*# sourceMappingURL=login.css.map */

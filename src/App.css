@@ -1,0 +1,204 @@
+/*
+ * [Modified] Modern CSS Reset
+ * @link https://github.com/hankchizljaw/modern-css-reset
+*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: serif;
+  color: #000;
+  background-color: #fff;
+}
+
+.head {
+  text-align: center;
+}
+.head h1 {
+  letter-spacing: 3px;
+  font-size: 3vw;
+}
+.head h3 {
+  font-weight: 100;
+  font-size: 2vw;
+}
+
+.middle {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 2vw;
+}
+.middle-left-input {
+  display: flex;
+  gap: 10px;
+}
+.middle-right-input {
+  display: flex;
+  gap: 10px;
+}
+
+.middle-static {
+  display: flex;
+  justify-content: center;
+  padding: 10px 2vw;
+  letter-spacing: 2px;
+}
+.middle-static-address {
+  position: relative;
+}
+.middle-static-address:nth-child(1) {
+  width: 30%;
+}
+.middle-static-address:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 30%;
+}
+.middle-static-address:nth-child(2) {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.main-head {
+  margin: 2vh 0px 10vh;
+  position: relative;
+}
+.main-head-title {
+  text-align: center;
+}
+.main-head-right {
+  position: absolute;
+  right: 2vw;
+  top: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main-head-right-weight {
+  display: flex;
+}
+.main-head-right-weight h4 {
+  width: 50px;
+}
+.main-head-right-weight input {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.main {
+  padding: 0px 2vw;
+}
+.main-title {
+  font-size: 2vw;
+}
+.main-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 2vh 0px;
+}
+.main-form-input {
+  display: flex;
+  border-bottom: 1px solid black;
+}
+.main-form-input h4 {
+  white-space: nowrap;
+  font-weight: 100;
+}
+.main-form-input input {
+  border: none;
+  width: 100%;
+}
+.main-form-input-spl {
+  display: flex;
+}
+.main-form-input-spl h4 {
+  border: none;
+  font-weight: 100;
+}
+.main-form-input-spl-input {
+  width: 80%;
+  border: none;
+}
+.main-form-input-spl-date {
+  border: none;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 2vw;
+  margin: 5vh 0px;
+}
+.footer-left-sign {
+  height: 10vh;
+}
+.footer-left-name {
+  line-height: 100%;
+}
+.footer-right-sign {
+  height: 10vh;
+}
+.footer-right-sign h4 {
+  text-align: center;
+  font-weight: 100;
+}
+.footer-right-name b {
+  letter-spacing: 2px;
+}/*# sourceMappingURL=App.css.map */
