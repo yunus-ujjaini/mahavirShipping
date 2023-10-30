@@ -2,10 +2,11 @@ import './login.css';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore"; 
-
+import { Outlet, Link, useNavigate, redirect } from "react-router-dom";
+import {ReactSession} from 'react-client-session';
 
 function Login(props) {
-
+    const navigate = useNavigate();
     
 
     const firebaseConfig = {
@@ -30,10 +31,14 @@ function Login(props) {
         querySnapshot.forEach((doc) => {
             if(doc.data().UserName === userName && doc.data().Password === userPass){
                 correctCreds=true;
+                ReactSession.setStoreType("sessionStorage");
+                ReactSession.set("userId",doc.data().Usertype);
+                console.log("All good");
+                navigate("/Gatepass");
             }
         });
         if(!correctCreds){
-            console.log("Incorrect ")
+            console.log("Incorrect ");
         }
     }
     return (
