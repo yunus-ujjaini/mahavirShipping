@@ -4,8 +4,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, getDocs, addDoc, updateDoc, doc } from "firebase/firestore";
 import { useEffect, useState } from 'react';
+import { Outlet, Link,useNavigate } from "react-router-dom";
+import {ReactSession} from 'react-client-session';
 
 function App() {
+    const navigate=useNavigate();
+    ReactSession.setStoreType("sessionStorage");
     const [billNo, setBillNo] = useState(0);
     const [sysdate, setSysDate] = useState(new Date().toDateString().substring(4, 16));
     const [time, setTime] = useState("Shift 1");
@@ -166,7 +170,13 @@ function App() {
 
 
     useEffect(() => {
+
+        if (ReactSession.get("userId") == null) {
+            navigate("/");
+          }
+
         fillInitialData();
+
     }, [])
 
     useEffect(() => {
@@ -364,6 +374,11 @@ function App() {
                 </button>
                 <button onClick={resetData}>
                     Reset Data
+                </button>
+                <button onClick={()=>{
+                    ReactSession.remove("userId"); 
+                    navigate("/");
+                    }}>Logout
                 </button>
             </div>
 
