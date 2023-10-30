@@ -1,71 +1,83 @@
 @import 'reset';
 
-body{
-    font-family: serif;
+body {
+    font-family: sans-serif;
     color: #000;
-    background-color: #fff;
+    margin: 1cm;
+    margin-top: 0;
 }
-.search{
+
+.search {
     position: relative;
-    input{
+
+    input {
         width: 100%;
     }
-    .vehicleSearch{
+
+    .vehicleSearch {
         position: absolute;
         top: 0%;
         right: 0%;
         width: 100px;
-        &:hover{
+
+        &:hover {
             cursor: pointer;
         }
     }
 }
-.head{
+
+.head {
     text-align: center;
-    h1{
-        letter-spacing: 3px;
+
+    h1 {
+        letter-spacing: 2px;
         font-size: 3vw;
+        font-family: Rockwell;
+        font-weight: bold;
     }
-    h3{
-        font-weight: 100;
-        font-size: 2vw;
+
+    h3 {
+        font-size: 1.5vw;
+        line-height: 1px;
+        font-weight: normal;
     }
 }
-.middle{
+
+.middle {
     display: flex;
     justify-content: space-between;
     padding: 10px 2vw;
-    &-left{
-        &-input{
+
+    &-left {
+        &-input {
             display: flex;
             gap: 10px;
         }
     }
-    &-right{
-        &-input{
+
+    &-right {
+        &-input {
             display: flex;
             gap: 10px;
         }
     }
 }
-.middle-static{
+
+.middle-static {
     display: flex;
     justify-content: center;
     padding: 10px 2vw;
     letter-spacing: 2px;
-    &-address{
+    font-weight: bold;
+
+    &-address {
         position: relative;
-        
-        &:nth-child(1){
+
+        &:nth-child(1) {
             width: 30%;
         }
-        &:nth-child(3){
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            width: 30%;
-        }
-        &:nth-child(2){
+
+        &:nth-child(2) {
             width: 40%;
             display: flex;
             flex-direction: column;
@@ -73,17 +85,26 @@ body{
             border-left: 1px solid black;
             border-right: 1px solid black;
         }
+
+        &:nth-child(3) {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
     }
-    
+
 }
 
-.main-head{
+.main-head {
     margin: 2vh 0px 10vh;
     position: relative;
-    &-title{
+
+    &-title {
         text-align: center;
     }
-    &-right{
+
+    &-right {
         position: absolute;
         right: 2vw;
         top: 20%;
@@ -91,96 +112,208 @@ body{
         display: flex;
         flex-direction: column;
         gap: 10px;
-        &-weight{
+
+        &-weight {
             display: flex;
             position: relative;
-            h4{
+
+            h4 {
                 width: 50px;
             }
-            input{
+
+            input {
                 border: none;
                 border-bottom: 1px solid black;
             }
-            
+
         }
     }
-    
+
 }
-.main{
+
+.main {
     padding: 0px 2vw;
-    &-title{
-        font-size: 2vw;
-    }
-    &-form{
+
+    &-form {
         display: flex;
         flex-direction: column;
-        gap:10px;
+        gap: 10px;
         margin: 2vh 0px;
-        &-input{
-            display: flex; 
+
+        &-input {
+            display: flex;
             border-bottom: 1px solid black;
-            h4{
+
+            h4 {
                 white-space: nowrap;
                 font-weight: 100;
+                height: 1.2vh;
             }
-            input{
+
+            input {
                 border: none;
-                // border-bottom: 1px solid black;
                 width: 100%;
+                height: 1.2vh;
+
             }
         }
-        &-input-spl{
+
+        &-input-spl {
             display: flex;
-            // border: none;
-            h4{
+
+            h4 {
                 border: none;
                 font-weight: 100;
             }
-            &-input{
+
+            &-input {
                 width: 80%;
                 border: none;
             }
         }
-        &-input-spl-date{
+
+        &-input-spl-date {
             border: none;
         }
     }
 }
-.footer{
+
+.footer {
     display: flex;
     justify-content: space-between;
     padding: 0px 2vw;
-    margin: 5vh 0px;
-    &-left{
-        &-sign{
+    margin: 1vh 0px;
+
+    &-left {
+        &-sign {
             height: 10vh;
         }
-        &-name{
+
+        &-name {
             line-height: 100%;
+            font-weight: bold;
         }
     }
-    &-right{
-        &-sign{
+
+    &-right {
+        &-sign {
             height: 10vh;
-            h4{
+
+            h4 {
                 text-align: center;
                 font-weight: 100;
             }
         }
-        &-name{
-            b{
-                letter-spacing: 2px;
+
+        &-name {
+            b {
+                letter-spacing: 1px;
             }
         }
     }
 }
-.ActionButtons{
+
+.ActionButtons {
     display: flex;
     gap: 10px;
     padding: 2vw;
-    button{
-        &:hover{
+
+    button {
+        &:hover {
             cursor: pointer;
         }
+    }
+}
+
+@media print {
+    @page {
+        size: A5;
+        margin: 0;
+    }
+    // Define a mixin to avoid page breaks inside elements
+    @mixin avoid-page-break {
+        page-break-inside: avoid;
+    }
+    @mixin reduce-margins-padding {
+        margin: 0;
+        padding: 0;
+    }
+    // Define a mixin to reduce font sizes
+    @mixin reduce-font-sizes {
+        font-size: 10pt; // Adjust the font size as needed
+    }
+    .head {
+        h1 {
+            letter-spacing: 2px;
+            font-size: 4.5vw;
+            font-family: Rockwell;
+            font-weight: bold;
+            margin-top: 2vh;
+        }
+        h3 {
+            font-size: 2.6vw;
+            font-weight: normal;
+        }
+    }
+
+    .middle-static {
+        font-size: 2vw;
+        padding: 1vw;
+        letter-spacing: 1px;
+
+        &-address {
+            position: relative;
+
+            &:nth-child(1) {
+                width: 30%;
+            }
+            
+            &:nth-child(2) {
+                width: 40%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-left: 1px solid black;
+                border-right: 1px solid black;
+            }
+            
+            &:nth-child(3) {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+        }
+    }
+
+    body {
+        @include reduce-font-sizes;
+    }
+
+    .main {
+        font-size: 8pt;
+
+        &-title {
+            font-size: 8pt;
+        }
+
+        &-head-right-weight {
+            height: 2.5vh;
+            max-width: 22vw;
+            font-size: 2.2vw;
+        }
+    }
+
+    .footer {
+        @include reduce-margins-padding;
+    }
+
+    // Apply the 'avoid-page-break' mixin to elements you want to avoid page breaks
+    .no-page-break {
+        @include avoid-page-break;
+    }
+    
+    .ActionButtons {
+        display: none;
     }
 }
